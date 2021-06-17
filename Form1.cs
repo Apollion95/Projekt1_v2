@@ -17,37 +17,43 @@ namespace Projekt1_v5
         {
             InitializeComponent();
         }
-        void Clear()
+        void Clear() //ta funkcja czysci textboxy
         {
             textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = "";
         }
-
-      
-        
+        void Buttons() //ta funkcja sluzy do ukrywania buttonow dodaj/usun/zmien
+        {
+            button7.Visible = 
+            button8.Visible = 
+            button9.Visible = 
+            button10.Visible = 
+            button11.Visible = 
+            button12.Visible = 
+            button13.Visible = 
+            button14.Visible = 
+            button15.Visible = 
+            button16.Visible = 
+            button17.Visible = 
+            button18.Visible = 
+            button19.Visible = 
+            button20.Visible = 
+            button21.Visible = false;
+        }
+        void TextBoxs() //ta funkcja ukrywa textboxy
+        {
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
+            textBox6.Enabled = false;
+        }        
         private void Form1_Load(object sender, EventArgs e)
         {
-        
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;//
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;//
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;//
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;//
-            button19.Visible = false;
-            button20.Visible = false;
-            button21.Visible = false;//
+            Buttons();
+            TextBoxs();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //wyswietlanie
-        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }//wyswietlanie
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -63,32 +69,18 @@ namespace Projekt1_v5
                               Nazwa = p.Nazwa
                           };
             dataGridView1.DataSource = klienci.ToList();
+            TextBoxs();
             textBox1.Enabled = true;
             textBox2.Enabled = true;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
             textBox5.Enabled = true;
-            textBox6.Enabled = false;
+            Buttons();
             button7.Visible = true;
             button8.Visible = true;
             button9.Visible = true;//
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;//
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;//
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;//
-            button19.Visible = false;
-            button20.Visible = false;
-            button21.Visible = false;//
-
             Clear();
-
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             //dostepnosc
@@ -101,33 +93,20 @@ namespace Projekt1_v5
                           TypNosnika=p.TypNosnika
                           };
             dataGridView1.DataSource = dostepnosc.ToList();
+            TextBoxs();
             textBox1.Enabled = true;
             textBox2.Enabled = true;
-            textBox3.Enabled = true;
-            textBox4.Enabled = false;
-            textBox5.Enabled = false;
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;//
+            textBox3.Enabled = true;  
+            Buttons();
             button10.Visible = true;
             button11.Visible = true;
-            button12.Visible = true;//
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;//
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;//
-            button19.Visible = false;
-            button20.Visible = false;
-            button21.Visible = false;//
+            button12.Visible = true;
             Clear();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             //filmy
-
             using var db = new WypozyczalniaFilmowDBContext();
             var filmy = from p in db.Films
                              select new
@@ -140,30 +119,19 @@ namespace Projekt1_v5
                                  NosnikID=p.IdNosnika
                              };
             dataGridView1.DataSource = filmy.ToList();
+            TextBoxs();
+            Buttons();
             textBox1.Enabled = true;
             textBox2.Enabled = true;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
             textBox5.Enabled = true;
             textBox6.Enabled = true;
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;//
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;//
             button13.Visible = true;
             button14.Visible = true;
-            button15.Visible = true;//
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;//
-            button19.Visible = false;
-            button20.Visible = false;
-            button21.Visible = false;//
+            button15.Visible = true;           
             Clear();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             //pracownicy
@@ -178,30 +146,18 @@ namespace Projekt1_v5
                                  Wiek=p.Wiek
                              };
             dataGridView1.DataSource = pracownik.ToList();
+            TextBoxs();
+            Buttons();
             textBox1.Enabled = true;
             textBox2.Enabled = true;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
             textBox5.Enabled = true;
-            textBox6.Enabled = false;
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;//
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;//
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;//
             button16.Visible = true;
             button17.Visible = true;
-            button18.Visible = true;//
-            button19.Visible = false;
-            button20.Visible = false;
-            button21.Visible = false;//
+            button18.Visible = true;
             Clear();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             //Wynajem
@@ -216,60 +172,18 @@ namespace Projekt1_v5
                                 DataZwrotu=p.DataZwrotu
                             };
             dataGridView1.DataSource = wynajem.ToList();
+            TextBoxs();
+            Buttons();
             textBox1.Enabled = true;
             textBox2.Enabled = true;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
             textBox5.Enabled = true;
-            textBox6.Enabled = false;
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;//
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;//
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;//
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;//
             button19.Visible = true;
             button20.Visible = true;
-            button21.Visible = true;//
+            button21.Visible = true;
             Clear();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             //zmiana klienci
@@ -278,9 +192,7 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button2.PerformClick();
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;
+            Buttons();
 
         }
         private void button8_Click(object sender, EventArgs e)
@@ -291,10 +203,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button2.PerformClick();
-           
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;
+
+            Buttons();
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -304,11 +214,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button2.PerformClick();
-            button7.Visible = false;
-            button8.Visible = false;
-            button9.Visible = false;
+            Buttons();
         }
-
         private void button10_Click(object sender, EventArgs e)
         {
             //dostepnosc zmien
@@ -317,11 +224,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button6.PerformClick();
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;
+            Buttons();
         }
-
         private void button11_Click(object sender, EventArgs e)
         {
             //dostepnosc dodaj
@@ -330,11 +234,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button6.PerformClick();
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;
+            Buttons();
         }
-
         private void button12_Click(object sender, EventArgs e)
         {
             //dostepnosc usun
@@ -343,11 +244,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button6.PerformClick();
-            button10.Visible = false;
-            button11.Visible = false;
-            button12.Visible = false;
+            Buttons();
         }
-
         private void button13_Click(object sender, EventArgs e)
         {
             //Filmy zmien
@@ -356,11 +254,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button5.PerformClick();
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;
+            Buttons();
         }
-
         private void button14_Click(object sender, EventArgs e)
         {
             //Filmy dodaj
@@ -369,11 +264,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button5.PerformClick();
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;
+            Buttons();
         }
-
         private void button15_Click(object sender, EventArgs e)
         {
             //Filmy usun
@@ -382,11 +274,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button5.PerformClick();
-            button13.Visible = false;
-            button14.Visible = false;
-            button15.Visible = false;
+            Buttons();
         }
-
         private void button16_Click(object sender, EventArgs e)
         {
             //Pracownicy zmien
@@ -395,15 +284,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button4.PerformClick();
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;
+            Buttons();
         }
-
-
-
-
-
         private void button17_Click_1(object sender, EventArgs e)
         {
             //Pracownicy dodaj
@@ -412,11 +294,8 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button4.PerformClick();
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;
+            Buttons();
         }
-
         private void button18_Click_1(object sender, EventArgs e)
         {
             //Pracownicy usun
@@ -425,49 +304,49 @@ namespace Projekt1_v5
             db.SaveChanges();
             Clear();
             button4.PerformClick();
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;
+            Buttons();
         }
-
         private void button19_Click_1(object sender, EventArgs e)
         {
             //Wynajem Zmien
             using var db = new WypozyczalniaFilmowDBContext();
-            db.Wynajems.Update(new Wynajem() { IdWypozyczenia = textBox1.Text, IdKlienta = textBox2.Text, IdFilmu = textBox3.Text, DataWypozyczenia = DateTime.Parse(textBox4.Text), DataZwrotu = DateTime.Parse(textBox5.Text) });
+            db.Wynajems.Update(new Wynajem() { IdWypozyczenia = textBox1.Text, IdKlienta = textBox2.Text, IdFilmu = textBox3.Text,
+                DataWypozyczenia = DateTime.Parse(textBox4.Text), DataZwrotu = DateTime.Parse(textBox5.Text) });
             db.SaveChanges();
             Clear();
             button3.PerformClick();
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;
+            Buttons();
         }
-
         private void button20_Click_1(object sender, EventArgs e)
         {
             //Wynajem Dodaj
             using var db = new WypozyczalniaFilmowDBContext();
-            db.Wynajems.Add(new Wynajem() { IdWypozyczenia = textBox1.Text, IdKlienta = textBox2.Text, IdFilmu = textBox3.Text, DataWypozyczenia = DateTime.Parse(textBox4.Text), DataZwrotu = DateTime.Parse(textBox5.Text) });
+            db.Wynajems.Add(new Wynajem() { IdWypozyczenia = textBox1.Text, IdKlienta = textBox2.Text, IdFilmu = textBox3.Text, 
+                DataWypozyczenia = DateTime.Parse(textBox4.Text), DataZwrotu = DateTime.Parse(textBox5.Text) });
             db.SaveChanges();
             Clear();
             button3.PerformClick();
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;
+            Buttons();
         }
-
         private void button21_Click_1(object sender, EventArgs e)
         {
             //Wynajem usun
             using var db = new WypozyczalniaFilmowDBContext();
-            db.Wynajems.Remove(new Wynajem() { IdWypozyczenia = textBox1.Text, IdKlienta = textBox2.Text, IdFilmu = textBox3.Text, DataWypozyczenia = DateTime.Parse(textBox4.Text), DataZwrotu = DateTime.Parse(textBox5.Text) });
+            db.Wynajems.Remove(new Wynajem() { IdWypozyczenia = textBox1.Text, IdKlienta = textBox2.Text, IdFilmu = textBox3.Text, 
+                DataWypozyczenia = DateTime.Parse(textBox4.Text), DataZwrotu = DateTime.Parse(textBox5.Text) });
             db.SaveChanges();
             Clear();
             button3.PerformClick();
-            button16.Visible = false;
-            button17.Visible = false;
-            button18.Visible = false;
+            Buttons();
         }
+        private void textBox1_TextChanged(object sender, EventArgs e) { } // muszą być, po ich usunieciu program nie ma do czego sie odwolac
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void textBox3_TextChanged(object sender, EventArgs e) { }
+        private void textBox4_TextChanged(object sender, EventArgs e) { }
+        private void textBox5_TextChanged(object sender, EventArgs e) { }
+        private void textBox6_TextChanged(object sender, EventArgs e) { }
+
+
     }
 }
 
